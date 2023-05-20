@@ -1,8 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
 import Add from './components/Add/Add';
 import Sub from './components/sub/Sub';
 import { useState } from 'react';
+import './App.css';
 
 
 
@@ -36,8 +35,9 @@ function App() {
       </div>
 
       <button onClick = {printValue}>print</button>
+      
    
-   <Add a='2' b='5'></Add> 
+   <Add a='2' b='5'/> 
    <Sub a='10' b='6'/>
   
   </div>
