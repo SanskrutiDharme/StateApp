@@ -1,25 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
+import Add from './components/Add/Add';
+import Sub from './components/sub/Sub';
+import { useState } from 'react';
+
+
 
 function App() {
+
+  const [inputvalue, setInputValue] = useState(0)
+      
+  const printValue = () => {
+   console.log('inputvalue printValue', inputvalue)
+  }
+  
+
+   //let inputvalue = 6;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+     <div>
+        <h1>My First React Project</h1>
+       <p>Hello User {inputvalue }</p>
+     
+
+      <div>
+        <input 
+        value = {inputvalue}
+        onChange={(e) => {
+
+         setInputValue(e.target.value)
+         console.log('inputvalue ', inputvalue);
+
+        }}
+        type = 'number' 
+        placeholder='Enter the no.'/>
+      </div>
+
+      <button onClick = {printValue}>print</button>
+   
+   <Add a='2' b='5'></Add> 
+   <Sub a='10' b='6'/>
+  
+  </div>
+
+   
+    
+    );
 }
 
 export default App;
